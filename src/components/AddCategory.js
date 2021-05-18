@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
+import { Button, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 
 export const AddCategory = ({setCategorias}) => {
 
@@ -20,11 +21,12 @@ export const AddCategory = ({setCategorias}) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input 
-                type="text"
-                value={inputValue}
-                onChange={ handleInputChange }
-            />
+            <InputGroup style={{width: "90%"}} className="mx-5">
+                <Input ype="text" value={inputValue} onChange={ handleInputChange }/>
+                <InputGroupAddon addonType="append">
+                    <Button onClick={handleSubmit}>Buscar</Button>
+                </InputGroupAddon>
+            </InputGroup>
         </form>
     )
 }
